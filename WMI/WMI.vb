@@ -7,7 +7,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Caption() As String
+        Public Shared Function Caption() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -28,7 +28,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Description() As String
+        Public Shared Function Description() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -50,7 +50,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Domain() As String
+        Public Shared Function Domain() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -71,7 +71,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function InstallDate() As DateTime
+        Public Shared Function InstallDate() As DateTime
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -93,7 +93,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function LocalAccount() As Boolean
+        Public Shared Function LocalAccount() As Boolean
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -114,7 +114,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Name() As String
+        Public Shared Function Name() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -135,7 +135,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function SID() As String
+        Public Shared Function SID() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -156,7 +156,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function SIDType() As SByte
+        Public Shared Function SIDType() As SByte
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -187,7 +187,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Status() As String
+        Public Shared Function Status() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -210,7 +210,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Caption() As String
+        Public Shared Function Caption() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -231,7 +231,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function BootDevice() As String
+        Public Shared Function BootDevice() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -253,7 +253,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function BuildNumber() As String
+        Public Shared Function BuildNumber() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -275,7 +275,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function BuildType() As String
+        Public Shared Function BuildType() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -297,7 +297,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function CodeSet() As String
+        Public Shared Function CodeSet() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -319,7 +319,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function CountryCode() As String
+        Public Shared Function CountryCode() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -340,7 +340,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function CreationClassName() As String
+        Public Shared Function CreationClassName() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -361,7 +361,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function CSCreationClassName() As String
+        Public Shared Function CSCreationClassName() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -383,7 +383,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function CSDVersion() As String
+        Public Shared Function CSDVersion() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -404,7 +404,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function CSName() As String
+        Public Shared Function CSName() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -425,7 +425,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function CurrentTimeZone() As Int16
+        Public Shared Function CurrentTimeZone() As Int16
 
             Dim objWMIService As Object
             Dim objItems As Object
@@ -447,7 +447,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function DataExecutionPrevention_Available() As Boolean
+        Public Shared Function DataExecutionPrevention_Available() As Boolean
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -468,7 +468,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function DataExecutionPrevention_32BitApplications() As Boolean
+        Public Shared Function DataExecutionPrevention_32BitApplications() As Boolean
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -489,7 +489,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function DataExecutionPrevention_Drivers() As Boolean
+        Public Shared Function DataExecutionPrevention_Drivers() As Boolean
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -514,7 +514,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function DataExecutionPrevention_SupportPolicy() As SByte
+        Public Shared Function DataExecutionPrevention_SupportPolicy() As SByte
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -535,7 +535,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Debug() As Boolean
+        Public Shared Function Debug() As Boolean
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -556,7 +556,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Description() As String
+        Public Shared Function Description() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -577,7 +577,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Distributed() As String
+        Public Shared Function Distributed() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -601,7 +601,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function EncryptionLevel() As UInt32
+        Public Shared Function EncryptionLevel() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -625,7 +625,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function ForegroundApplicationBoost() As SByte
+        Public Shared Function ForegroundApplicationBoost() As SByte
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -646,7 +646,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function FreePhysicalMemory() As UInt64
+        Public Shared Function FreePhysicalMemory() As UInt64
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -667,7 +667,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function FreeSpaceInPagingFiles() As UInt64
+        Public Shared Function FreeSpaceInPagingFiles() As UInt64
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -688,7 +688,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function FreeVirtualMemory() As UInt64
+        Public Shared Function FreeVirtualMemory() As UInt64
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -709,7 +709,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function InstallDate() As DateTime
+        Public Shared Function InstallDate() As DateTime
 
             Dim objWMIService As Object
             Dim objItems As Object
@@ -734,7 +734,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function LargeSystemCache() As UInt32
+        Public Shared Function LargeSystemCache() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -755,7 +755,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function LastBootUpTime() As DateTime
+        Public Shared Function LastBootUpTime() As DateTime
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -777,7 +777,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function LocalDateTime() As DateTime
+        Public Shared Function LocalDateTime() As DateTime
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -799,7 +799,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Locale() As String
+        Public Shared Function Locale() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -820,7 +820,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Manufacturer() As String
+        Public Shared Function Manufacturer() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -841,7 +841,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function MaxNumberOfProcesses() As UInt32
+        Public Shared Function MaxNumberOfProcesses() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -862,7 +862,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function MaxProcessMemorySize() As UInt64
+        Public Shared Function MaxProcessMemorySize() As UInt64
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -883,7 +883,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function MUILanguages() As String
+        Public Shared Function MUILanguages() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -904,7 +904,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Name() As String
+        Public Shared Function Name() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -925,7 +925,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function NumberOfLicensedUsers() As UInt32
+        Public Shared Function NumberOfLicensedUsers() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -946,7 +946,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function NumberOfProcesses() As UInt32
+        Public Shared Function NumberOfProcesses() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -967,7 +967,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function NumberOfUsers() As UInt32
+        Public Shared Function NumberOfUsers() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -983,7 +983,7 @@ Public Class WMI
             objItems = Nothing
             objItem = Nothing
         End Function
-        Friend Shared Function OperatingSystemSKU() As UInt32
+        Public Shared Function OperatingSystemSKU() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1005,7 +1005,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Organization() As String
+        Public Shared Function Organization() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1027,7 +1027,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function OSArchitecture() As String
+        Public Shared Function OSArchitecture() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1048,7 +1048,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function OSLanguage() As UInt32
+        Public Shared Function OSLanguage() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1069,7 +1069,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function OSProductSuite() As UInt32
+        Public Shared Function OSProductSuite() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1090,7 +1090,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function OSType() As UInt16
+        Public Shared Function OSType() As UInt16
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1111,7 +1111,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function OtherTypeDescription() As String
+        Public Shared Function OtherTypeDescription() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1132,7 +1132,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function PAEEnabled() As Boolean
+        Public Shared Function PAEEnabled() As Boolean
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1148,7 +1148,7 @@ Public Class WMI
             objItems = Nothing
             objItem = Nothing
         End Function
-        Friend Shared Function PlusProductID() As String
+        Public Shared Function PlusProductID() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1164,7 +1164,7 @@ Public Class WMI
             objItems = Nothing
             objItem = Nothing
         End Function
-        Friend Shared Function PlusVersionNumber() As String
+        Public Shared Function PlusVersionNumber() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1186,7 +1186,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function PortableOperatingSystem() As Boolean
+        Public Shared Function PortableOperatingSystem() As Boolean
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1207,7 +1207,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Primary() As Boolean
+        Public Shared Function Primary() As Boolean
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1231,7 +1231,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function ProductType() As UInt32
+        Public Shared Function ProductType() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1253,7 +1253,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function RegisteredUser() As String
+        Public Shared Function RegisteredUser() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1275,7 +1275,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function SerialNumber() As String
+        Public Shared Function SerialNumber() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1296,7 +1296,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function ServicePackMajorVersion() As UInt16
+        Public Shared Function ServicePackMajorVersion() As UInt16
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1317,7 +1317,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function ServicePackMinorVersion() As UInt16
+        Public Shared Function ServicePackMinorVersion() As UInt16
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1338,7 +1338,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function SizeStoredInPagingFiles() As UInt64
+        Public Shared Function SizeStoredInPagingFiles() As UInt64
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1367,7 +1367,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Status() As String
+        Public Shared Function Status() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1388,7 +1388,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function SuiteMask() As UInt32
+        Public Shared Function SuiteMask() As UInt32
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1409,7 +1409,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function SystemDevice() As String
+        Public Shared Function SystemDevice() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1431,7 +1431,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function SystemDirectory() As String
+        Public Shared Function SystemDirectory() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1452,7 +1452,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function SystemDrive() As String
+        Public Shared Function SystemDrive() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1473,7 +1473,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function TotalSwapSpaceSize() As UInt64
+        Public Shared Function TotalSwapSpaceSize() As UInt64
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1494,7 +1494,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function TotalVirtualMemorySize() As UInt64
+        Public Shared Function TotalVirtualMemorySize() As UInt64
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1515,7 +1515,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function TotalVisibleMemorySize() As UInt64
+        Public Shared Function TotalVisibleMemorySize() As UInt64
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1537,7 +1537,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function Version() As String
+        Public Shared Function Version() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1559,7 +1559,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function WindowsDirectory() As String
+        Public Shared Function WindowsDirectory() As String
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1583,7 +1583,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function QuantumLength() As SByte
+        Public Shared Function QuantumLength() As SByte
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -1608,7 +1608,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Friend Shared Function QuantumType() As SByte
+        Public Shared Function QuantumType() As SByte
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
