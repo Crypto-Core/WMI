@@ -1625,4 +1625,548 @@ Public Class WMI
             objItem = Nothing
         End Function
     End Class
+    Public Class Win32_BootConfiguration
+        ''' <summary>
+        ''' Path to the system files required for booting the system.
+        '''Example: "C:\Windows"
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function BootDirectory() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            BootDirectory = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BootConfiguration")
+            For Each objItem In objItems
+                BootDirectory = objItem.BootDirectory
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Short description of the CIM_Setting object. This property is inherited from CIM_Setting.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Caption() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Caption = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BootConfiguration")
+            For Each objItem In objItems
+                Caption = objItem.Caption
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Path to the configuration files. This value may be similar to the value in the BootDirectory property.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ConfigurationPath() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ConfigurationPath = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BootConfiguration")
+            For Each objItem In objItems
+                ConfigurationPath = objItem.ConfigurationPath
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Description of the CIM_Setting object. This property is inherited from CIM_Setting.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Description() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Description = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BootConfiguration")
+            For Each objItem In objItems
+                Description = objItem.Description
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Last drive letter to which a physical drive is assigned.
+        '''Example: "E:"
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function LastDrive() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            LastDrive = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BootConfiguration")
+            For Each objItem In objItems
+                LastDrive = objItem.LastDrive
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Name of the boot configuration. It is an identifier for the boot configuration.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Name() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Name = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BootConfiguration")
+            For Each objItem In objItems
+                Name = objItem.Name
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Directory where temporary files can reside during boot time.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ScratchDirectory() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ScratchDirectory = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BootConfiguration")
+            For Each objItem In objItems
+                ScratchDirectory = objItem.ScratchDirectory
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Identifier by which the CIM_Setting object is known. This property is inherited from CIM_Setting.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SettingID() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SettingID = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BootConfiguration")
+            For Each objItem In objItems
+                SettingID = objItem.SettingID
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Directory where temporary files are stored.
+        '''Example: "C:\TEMP"
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function TempDirectory() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            TempDirectory = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BootConfiguration")
+            For Each objItem In objItems
+                TempDirectory = objItem.TempDirectory
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+    End Class
+    Public Class Win32_ProcessStartup
+        ''' <summary>
+        ''' Qualifiers: MappingStrings ("Win32API|Process and Thread Functions|CreateProcess|dwCreationFlags") , BitMap ("0", "1", "2", "3", "4", "9", "10", "26") , BitValues ("Debug_Process", "Debug_Only_This_Process", "Create_Suspended", "Detached_Process", "Create_New_Console", "Create_New_Process_Group", "Create_Unicode_Environment", "Create_Default_Error_Mode")
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function CreateFlags() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CreateFlags = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                CreateFlags = objItem.CreateFlags
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' List of settings for the configuration of a computer. Environment variables specify search paths for files, directories for temporary files, application-specific options, and other similar information. The system maintains a block of environment settings for each user and one for the computer. The system environment block represents environment variables for all of the users of a specific computer. A user's environment block represents the environment variables that the system maintains for a specific user, and includes the set of system environment variables. By default, each process receives a copy of the environment block for its parent process. Typically, this is the environment block for the user who is logged on. A process can specify different environment blocks for its child processes.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function EnvironmentVariables() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            EnvironmentVariables = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                EnvironmentVariables = objItem.EnvironmentVariables
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ErrorMode() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ErrorMode = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                ErrorMode = objItem.ErrorMode
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function FillAttribute() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            FillAttribute = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                FillAttribute = objItem.FillAttribute
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function PriorityClass() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            PriorityClass = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                PriorityClass = objItem.PriorityClass
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ShowWindow() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ShowWindow = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                ShowWindow = objItem.ShowWindow
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Title() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Title = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                Title = objItem.Title
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function WinstationDesktop() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            WinstationDesktop = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                WinstationDesktop = objItem.WinstationDesktop
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function X() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            X = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                X = objItem.X
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function XCountChars() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            XCountChars = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                XCountChars = objItem.XCountChars
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function XSize() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            XSize = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                XSize = objItem.XSize
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Y() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Y = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                Y = objItem.Y
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function YCountChars() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            YCountChars = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                YCountChars = objItem.YCountChars
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function YSize() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            YSize = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ProcessStartup")
+            For Each objItem In objItems
+                YSize = objItem.YSize
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+    End Class
+    Public Class Win32_VideoConfiguration
+        Public Shared Function SettingID() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SettingID = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoConfiguration")
+            For Each objItem In objItems
+                SettingID = objItem.SettingID
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Caption() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Caption = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoConfiguration")
+            For Each objItem In objItems
+                Caption = objItem.Caption
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Description() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Description = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoConfiguration")
+            For Each objItem In objItems
+                Description = objItem.Description
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ActualColorResolution() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ActualColorResolution = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoConfiguration")
+            For Each objItem In objItems
+                ActualColorResolution = objItem.ActualColorResolution
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function AdapterChipType() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            AdapterChipType = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoConfiguration")
+            For Each objItem In objItems
+                AdapterChipType = objItem.AdapterChipType
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function AdapterChipType() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            AdapterChipType = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoConfiguration")
+            For Each objItem In objItems
+                AdapterChipType = objItem.AdapterChipType
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function AdapterCompatibility() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            AdapterCompatibility = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoConfiguration")
+            For Each objItem In objItems
+                AdapterCompatibility = objItem.AdapterCompatibility
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+    End Class
 End Class
