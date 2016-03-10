@@ -3665,7 +3665,7 @@ Public Class WMI
             objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
             objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ComputerSystem")
             For Each objItem In objItems
-                Roles = objItem.Roles
+                Roles = objItem.Roles()
             Next
             objWMIService = Nothing
             objItems = Nothing
@@ -3987,6 +3987,40 @@ Public Class WMI
             objItems = objWMIService.ExecQuery("SELECT * FROM Win32_ComputerSystem")
             For Each objItem In objItems
                 Workgroup = objItem.Workgroup
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+    End Class
+    Public Class Win32_Process
+        Public Shared Function Caption() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Caption = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Process")
+            For Each objItem In objItems
+                Caption = objItem.Caption
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Name() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Name = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Process")
+            For Each objItem In objItems
+                Name = objItem.Name
             Next
             objWMIService = Nothing
             objItems = Nothing
