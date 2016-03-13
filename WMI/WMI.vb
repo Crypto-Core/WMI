@@ -6283,4 +6283,953 @@ Public Class WMI
             objItem = Nothing
         End Function
     End Class
+    Public Class Win32_VideoController
+        Public Shared Function AcceleratorCapabilities() As Object()
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            AcceleratorCapabilities = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                AcceleratorCapabilities = objItem.AcceleratorCapabilities
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function AdapterCompatibility() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            AdapterCompatibility = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                AdapterCompatibility = objItem.AdapterCompatibility
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function AdapterDACType() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            AdapterDACType = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                AdapterDACType = objItem.AdapterDACType
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function AdapterRAM() As Long
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            AdapterRAM = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                AdapterRAM = objItem.AdapterRAM
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Availability() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Availability = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                Availability = objItem.Availability
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CapabilityDescriptions() As Object()
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CapabilityDescriptions = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CapabilityDescriptions = objItem.CapabilityDescriptions
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Caption() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Caption = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                Caption = objItem.Caption
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ColorTableEntries() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ColorTableEntries = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                ColorTableEntries = objItem.ColorTableEntries
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ConfigManagerErrorCode() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ConfigManagerErrorCode = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                ConfigManagerErrorCode = objItem.ConfigManagerErrorCode
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ConfigManagerUserConfig() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ConfigManagerUserConfig = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                ConfigManagerUserConfig = objItem.ConfigManagerUserConfig
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CreationClassName() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CreationClassName = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CreationClassName = objItem.CreationClassName
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CurrentBitsPerPixel() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentBitsPerPixel = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CurrentBitsPerPixel = objItem.CurrentBitsPerPixel
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CurrentHorizontalResolution() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentHorizontalResolution = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CurrentHorizontalResolution = objItem.CurrentHorizontalResolution
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CurrentNumberOfColors() As Long
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentNumberOfColors = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CurrentNumberOfColors = objItem.CurrentNumberOfColors
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CurrentNumberOfColumns() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentNumberOfColumns = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CurrentNumberOfColumns = objItem.CurrentNumberOfColumns
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CurrentNumberOfRows() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentNumberOfRows = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CurrentNumberOfRows = objItem.CurrentNumberOfRows
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CurrentRefreshRate() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentRefreshRate = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CurrentRefreshRate = objItem.CurrentRefreshRate
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CurrentScanMode() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentScanMode = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CurrentScanMode = objItem.CurrentScanMode
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function CurrentVerticalResolution() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentVerticalResolution = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                CurrentVerticalResolution = objItem.CurrentVerticalResolution
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Description() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Description = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                Description = objItem.Description
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function DeviceID() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            DeviceID = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                DeviceID = objItem.DeviceID
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function DeviceSpecificPens() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            DeviceSpecificPens = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                DeviceSpecificPens = objItem.DeviceSpecificPens
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function DitherType() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            DitherType = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                DitherType = objItem.DitherType
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function DriverDate() As DateTime
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            DriverDate = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                Dim str As String = objItem.DriverDate
+                DriverDate = New DateTime(str.Substring(0, 4), str.Substring(4, 2), str.Substring(6, 2), str.Substring(8, 2), str.Substring(10, 2), str.Substring(12, 2))
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function DriverVersion() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            DriverVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                DriverVersion = objItem.DriverVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ErrorCleared() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ErrorCleared = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                ErrorCleared = objItem.ErrorCleared
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ErrorDescription() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ErrorDescription = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                ErrorDescription = objItem.ErrorDescription
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ICMIntent() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ICMIntent = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                ICMIntent = objItem.ICMIntent
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ICMMethod() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ICMMethod = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                ICMMethod = objItem.ICMMethod
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function InfFilename() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            InfFilename = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                InfFilename = objItem.InfFilename
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function InfSection() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            InfSection = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                InfSection = objItem.InfSection
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function InstallDate() As DateTime
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            InstallDate = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                Dim str As String = objItem.InstallDate
+                InstallDate = New DateTime(str.Substring(0, 4), str.Substring(4, 2), str.Substring(6, 2), str.Substring(8, 2), str.Substring(10, 2), str.Substring(12, 2))
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function InstalledDisplayDrivers() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            InstalledDisplayDrivers = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                InstalledDisplayDrivers = objItem.InstalledDisplayDrivers
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function LastErrorCode() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            LastErrorCode = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                LastErrorCode = objItem.LastErrorCode
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function MaxMemorySupported() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            MaxMemorySupported = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                MaxMemorySupported = objItem.MaxMemorySupported
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function MaxNumberControlled() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            MaxNumberControlled = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                MaxNumberControlled = objItem.MaxNumberControlled
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function MaxRefreshRate() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            MaxRefreshRate = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                MaxRefreshRate = objItem.MaxRefreshRate
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function MinRefreshRate() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            MinRefreshRate = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                MinRefreshRate = objItem.MinRefreshRate
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Monochrome() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Monochrome = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                Monochrome = objItem.Monochrome
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Name() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Name = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                Name = objItem.Name
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function NumberOfColorPlanes() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            NumberOfColorPlanes = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                NumberOfColorPlanes = objItem.NumberOfColorPlanes
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function NumberOfVideoPages() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            NumberOfVideoPages = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                NumberOfVideoPages = objItem.NumberOfVideoPages
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function PNPDeviceID() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            PNPDeviceID = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                PNPDeviceID = objItem.PNPDeviceID
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function PowerManagementCapabilities() As Object()
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            PowerManagementCapabilities = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                PowerManagementCapabilities = objItem.PowerManagementCapabilities
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function PowerManagementSupported() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            PowerManagementSupported = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                PowerManagementSupported = objItem.PowerManagementSupported
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ProtocolSupported() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ProtocolSupported = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                ProtocolSupported = objItem.ProtocolSupported
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function ReservedSystemPaletteEntries() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ReservedSystemPaletteEntries = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                ReservedSystemPaletteEntries = objItem.ReservedSystemPaletteEntries
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function SpecificationVersion() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SpecificationVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                SpecificationVersion = objItem.SpecificationVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function Status() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Status = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                Status = objItem.Status
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function StatusInfo() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            StatusInfo = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                StatusInfo = objItem.StatusInfo
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function SystemCreationClassName() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SystemCreationClassName = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                SystemCreationClassName = objItem.SystemCreationClassName
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function SystemName() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SystemName = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                SystemName = objItem.SystemName
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function SystemPaletteEntries() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SystemPaletteEntries = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                SystemPaletteEntries = objItem.SystemPaletteEntries
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function TimeOfLastReset() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            TimeOfLastReset = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                Dim str As String = objItem.TimeOfLastReset
+                TimeOfLastReset = New DateTime(str.Substring(0, 4), str.Substring(4, 2), str.Substring(6, 2), str.Substring(8, 2), str.Substring(10, 2), str.Substring(12, 2))
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function VideoArchitecture() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            VideoArchitecture = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                VideoArchitecture = objItem.VideoArchitecture
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function VideoMemoryType() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            VideoMemoryType = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                VideoMemoryType = objItem.VideoMemoryType
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function VideoMode() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            VideoMode = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                VideoMode = objItem.VideoMode
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function VideoModeDescription() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            VideoModeDescription = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                VideoModeDescription = objItem.VideoModeDescription
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        Public Shared Function VideoProcessor() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            VideoProcessor = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_VideoController")
+            For Each objItem In objItems
+                VideoProcessor = objItem.VideoProcessor
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+    End Class
 End Class
