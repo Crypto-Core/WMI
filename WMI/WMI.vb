@@ -3446,7 +3446,7 @@ Public Class WMI
             objItems = Nothing
             objItem = Nothing
         End Function
-        Public Shared Function PowerManagementCapabilities() As UInt16()
+        Public Shared Function PowerManagementCapabilities() As Object()
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -5001,7 +5001,7 @@ Public Class WMI
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Public Shared Function PowerManagementCapabilities() As UInt16
+        Public Shared Function PowerManagementCapabilities() As Object()
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
@@ -5488,6 +5488,795 @@ Public Class WMI
             objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
             For Each objItem In objItems
                 VoltageCaps = objItem.VoltageCaps
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+    End Class
+    Public Class Win32_BIOS
+        ''' <summary>
+        ''' Array of BIOS characteristics supported by the system as defined by the System Management BIOS Reference Specification.
+        '''This value comes from the BIOS Characteristics member of the BIOS Information structure in the SMBIOS information.
+        '''Value	Meaning
+        '''Reserved
+        '''0 Reserved
+        '''1 Unknown
+        '''2 BIOS Characteristics Not Supported
+        '''3 ISA is supported
+        '''4 MCA is supported
+        '''5 EISA is supported
+        '''6 PCI is supported
+        '''7 PC Card (PCMCIA) is supported
+        '''8 Plug and Play is supported
+        '''9 APM is supported
+        '''10 BIOS is Upgradeable (Flash)
+        '''11 BIOS is Upgradable (Flash) - BIOS shadowing is allowed
+        '''12 VL-VESA is supported
+        '''13 ESCD support is available
+        '''14 Boot from CD is supported
+        '''15 Selectable Boot is supported
+        '''16 BIOS ROM is socketed
+        '''17 Boot From PC Card (PCMCIA) is supported
+        '''18 EDD (Enhanced Disk Drive) Specification is supported
+        '''19 Int 13h - Japanese Floppy for NEC 9800 1.2mb (3.5\", 1k Bytes/Sector, 360 RPM) is supported
+        '''20 Int 13h - Japanese Floppy for NEC 9800 1.2mb (3.5, 1k Bytes/Sector, 360 RPM) is supported - Int 13h - Japanese Floppy for Toshiba 1.2mb (3.5\", 360 RPM) is supported
+        '''21 Int 13h - Japanese Floppy for Toshiba 1.2mb (3.5, 360 RPM) is supported - Int 13h - 5.25\" / 360 KB Floppy Services are supported
+        '''22 Int 13h - 5.25 / 360 KB Floppy Services are supported - Int 13h - 5.25\" /1.2MB Floppy Services are supported
+        '''23Int 13h - 5.25 /1.2MB Floppy Services are supported - Int 13h - 3.5\" / 720 KB Floppy Services are supported
+        '''24 Int 13h - 3.5 / 720 KB Floppy Services are supported - Int 13h - 3.5\" / 2.88 MB Floppy Services are supported
+        '''25 Int 13h - 3.5 / 2.88 MB Floppy Services are supported - Int 5h, Print Screen Service is supported
+        '''26 Int 9h, 8042 Keyboard services are supported
+        '''27 Int 14h, Serial Services are supported
+        '''28 Int 17h, printer services are supported
+        '''29 Int 10h, CGA/Mono Video Services are supported
+        '''30 NEC PC-98
+        '''31 ACPI supported
+        '''32 ACPI is supported USB Legacy is supported
+        '''33 AGP is supported
+        '''34 I2O boot is supported
+        '''35 LS-120 boot is supported
+        '''36 ATAPI ZIP Drive boot is supported
+        '''37 1394 boot is supported
+        '''38 Smart Battery supported
+        '''39 Smart Battery is supported
+        '''40:47 Reserved for BIOS vendor
+        '''48:63 Reserved for system vendor
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function BiosCharacteristics() As Object()
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            BiosCharacteristics = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                BiosCharacteristics = objItem.BiosCharacteristics
+
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Array of the complete system BIOS information. In many computers there can be several version strings that are stored in the registry and represent the system BIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function BIOSVersion() As Object()
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            BIOSVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                BIOSVersion = objItem.BIOSVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Internal identifier for this compilation of this software element. This property is inherited from CIM_SoftwareElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function BuildNumber() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            BuildNumber = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                BuildNumber = objItem.BuildNumber
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Short description of the object—a one-line string. This property is inherited from CIM_ManagedSystemElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Caption() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Caption = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                Caption = objItem.Caption
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Code set used by this software element. This property is inherited from CIM_SoftwareElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function CodeSet() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CodeSet = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                CodeSet = objItem.CodeSet
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Name of the current BIOS language.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function CurrentLanguage() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentLanguage = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                CurrentLanguage = objItem.CurrentLanguage
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Description of the object. This property is inherited from CIM_ManagedSystemElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Description() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Description = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                Description = objItem.Description
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' The major release of the embedded controller firmware.
+        '''This value comes from the Embedded Controller Firmware Major Release member of the BIOS Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function EmbeddedControllerMajorVersion() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            EmbeddedControllerMajorVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                EmbeddedControllerMajorVersion = objItem.EmbeddedControllerMajorVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' The minor release of the embedded controller firmware.
+        '''This value comes from the Embedded Controller Firmware Minor Release member of the BIOS Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function EmbeddedControllerMinorVersion() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            EmbeddedControllerMinorVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                EmbeddedControllerMinorVersion = objItem.EmbeddedControllerMinorVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Manufacturer's identifier for this software element. Often this will be a stock keeping unit (SKU) or a part number. This property is inherited from CIM_SoftwareElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function IdentificationCode() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            IdentificationCode = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                IdentificationCode = objItem.IdentificationCode
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Number of languages available for installation on this system. Language may determine properties such as the need for Unicode and bidirectional text.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function InstallableLanguages() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            InstallableLanguages = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                InstallableLanguages = objItem.InstallableLanguages
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Date and time the object was installed. This property does not need a value to indicate that the object is installed. This property is inherited from CIM_ManagedSystemElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function InstallDate() As DateTime
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            InstallDate = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                Dim str As String = objItem.InstallDate
+                InstallDate = New DateTime(str.Substring(0, 4), str.Substring(4, 2), str.Substring(6, 2), str.Substring(8, 2), str.Substring(10, 2), str.Substring(12, 2))
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Language edition of this software element. The language codes defined in ISO 639 should be used. Where the software element represents a multilingual or international version of a product, the string "multilingual" should be used. This property is inherited from CIM_SoftwareElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function LanguageEdition() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            LanguageEdition = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                LanguageEdition = objItem.LanguageEdition
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Array of names of available BIOS-installable languages.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ListOfLanguages() As Object()
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ListOfLanguages = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                ListOfLanguages = objItem.ListOfLanguages
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Manufacturer of this software element.
+        '''This value comes from the Vendor member of the BIOS Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Manufacturer() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Manufacturer = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                Manufacturer = objItem.Manufacturer
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Name used to identify this software element.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Name() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Name = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                Name = objItem.Name
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Records the manufacturer and operating system type for a software element when the TargetOperatingSystem property has a value of 1 (Other). When TargetOperatingSystem has a value of 1, OtherTargetOS must have a nonnull value. For all other values of TargetOperatingSystem, OtherTargetOS is NULL. This property is inherited from CIM_SoftwareElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function OtherTargetOS() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            OtherTargetOS = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                OtherTargetOS = objItem.OtherTargetOS
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' If TRUE, this is the primary BIOS of the computer system. This property is inherited from CIM_BIOSElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function PrimaryBIOS() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            PrimaryBIOS = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                PrimaryBIOS = objItem.PrimaryBIOS
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Release date of the Windows BIOS in the Coordinated Universal Time (UTC) format of YYYYMMDDHHMMSS.MMMMMM(+-)OOO.
+        '''This value comes from the BIOS Release Date member of the BIOS Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ReleaseDate() As DateTime
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ReleaseDate = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                Dim str As String = objItem.ReleaseDate
+                ReleaseDate = New DateTime(str.Substring(0, 4), str.Substring(4, 2), str.Substring(6, 2), str.Substring(8, 2), str.Substring(10, 2), str.Substring(12, 2))
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Assigned serial number of the software element. This property is inherited from CIM_SoftwareElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SerialNumber() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SerialNumber = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                SerialNumber = objItem.SerialNumber
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' BIOS version as reported by SMBIOS.
+        ''' This value comes from the BIOS Version member of the BIOS Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SMBIOSBIOSVersion() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SMBIOSBIOSVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                SMBIOSBIOSVersion = objItem.SMBIOSBIOSVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Major SMBIOS version number. This property is NULL if SMBIOS is not found.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SMBIOSMajorVersion() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SMBIOSMajorVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                SMBIOSMajorVersion = objItem.SMBIOSMajorVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Minor SMBIOS version number. This property is NULL if SMBIOS is not found.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SMBIOSMinorVersion() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SMBIOSMinorVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                SMBIOSMinorVersion = objItem.SMBIOSMinorVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' If true, the SMBIOS is available on this computer system.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SMBIOSPresent() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SMBIOSPresent = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                SMBIOSPresent = objItem.SMBIOSPresent
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Identifier for this software element; designed to be used in conjunction with other keys to create a unique representation of this CIM_SoftwareElement instance. This property is inherited from CIM_SoftwareElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SoftwareElementID() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SoftwareElementID = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                SoftwareElementID = objItem.SoftwareElementID
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' State of a software element. This property is inherited from CIM_SoftwareElement.
+        '''Value	Meaning
+        '''0 Deployable
+        '''1 Installable
+        '''2 Executable
+        '''3 Running
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SoftwareElementState() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SoftwareElementState = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                SoftwareElementState = objItem.SoftwareElementState
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Current status of the object. Various operational and nonoperational statuses can be defined. Operational statuses include: "OK", "Degraded", and "Pred Fail" (an element, such as a SMART-enabled hard disk drive, may be functioning properly but predicting a failure in the near future). Nonoperational statuses include: "Error", "Starting", "Stopping", and "Service". The latter, "Service", could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. Not all such work is online, yet the managed element is neither "OK" nor in one of the other states. This property is inherited from CIM_ManagedSystemElement.
+        '''Values include the following:
+        '''OK ("OK")
+        '''Error ("Error")
+        '''Degraded ("Degraded")
+        '''Unknown ("Unknown")
+        '''Pred Fail ("Pred Fail")
+        '''Starting ("Starting")
+        '''Stopping ("Stopping")
+        '''Service ("Service")
+        '''Stressed ("Stressed")
+        '''NonRecover ("NonRecover")
+        '''No Contact ("No Contact")
+        '''Lost Comm ("Lost Comm")
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Status() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Status = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                Status = objItem.Status
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' The major release of the System BIOS.
+        '''This value comes from the System BIOS Major Release member of the BIOS Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SystemBiosMajorVersion() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SystemBiosMajorVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                SystemBiosMajorVersion = objItem.SystemBiosMajorVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' The minor release of the System BIOS.
+        '''This value comes from the System BIOS Minor Release member of the BIOS Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SystemBiosMinorVersion() As Integer
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SystemBiosMinorVersion = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                SystemBiosMinorVersion = objItem.SystemBiosMinorVersion
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Target operating system of the owning software element. This property is inherited from CIM_SoftwareElement. The possible values for this property are as follows.
+        '''Value	Meaning
+        '''0 Unknown
+        '''1 Other
+        '''2 MACOS
+        '''3 ATTUNIX
+        '''4 DGUX
+        '''5 DECNT
+        '''6 Digital Unix
+        '''7 OpenVMS
+        '''8 HPUX
+        '''9 AIX
+        '''10 MVS
+        '''11 OS400
+        '''12 OS/2
+        '''13 JavaVM
+        '''14 MSDOS
+        '''15 WIN3x
+        '''16 WIN95
+        '''17 WIN98
+        '''18 WINNT
+        '''19 WINCE
+        '''20 NCR3000
+        '''21 NetWare
+        '''22 OSF
+        '''23 DC/OS
+        '''24 Reliant UNIX
+        '''25 SCO UnixWare
+        '''26 SCO OpenServer
+        '''27 Sequent
+        '''28 IRIX
+        '''29 Solaris
+        '''30 SunOS
+        '''31 U6000
+        '''32 ASERIES
+        '''33 TandemNSK
+        '''34 TandemNT
+        '''35 BS2000
+        '''36 LINUX
+        '''37 Lynx
+        '''38 XENIX
+        '''39 VM/ESA
+        '''40 Interactive UNIX
+        '''41 BSDUNIX
+        '''42 FreeBSD
+        '''43 NetBSD
+        '''44 GNU Hurd
+        '''45 OS9
+        '''46 MACH Kernel
+        '''47 Inferno
+        '''48 QNX
+        '''49 EPOC
+        '''50 IxWorks
+        '''51 VxWorks
+        '''52 MiNT
+        '''53 BeOS
+        '''54 HP MPE
+        '''55 NextStep
+        '''56 PalmPilot
+        '''57 Rhapsody
+        '''58 Windows 2000
+        '''59 Dedicated
+        '''60 VSE
+        '''61 TPF
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function TargetOperatingSystem() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            TargetOperatingSystem = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                TargetOperatingSystem = objItem.TargetOperatingSystem
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Version of the BIOS. This string is created by the BIOS manufacturer. This property is inherited from CIM_SoftwareElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Version() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Version = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_BIOS")
+            For Each objItem In objItems
+                Version = objItem.Version
             Next
             objWMIService = Nothing
             objItems = Nothing
