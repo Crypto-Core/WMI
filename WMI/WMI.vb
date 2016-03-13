@@ -4027,4 +4027,1471 @@ Public Class WMI
             objItem = Nothing
         End Function
     End Class
+    Public Class Win32_Processor
+        ''' <summary>
+        ''' On a 32-bit operating system, the value is 32 and on a 64-bit operating system it is 64. This property is inherited from CIM_Processor.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function AddressWidth() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            AddressWidth = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                AddressWidth = objItem.AddressWidth
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Processor architecture used by the platform.
+        ''' 0 = x86
+        ''' 1 = MIPS
+        ''' 2 = Alpha
+        ''' 3 = PowerPC
+        ''' 5 = ARM
+        ''' 6 = ia64
+        ''' 9 = x64
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Architecture() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Architecture = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Architecture = objItem.Architecture
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Represents the asset tag of this processor.
+        '''This value comes from the Asset Tag member of the Processor Information structure in the SMBIOS information.
+        '''Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows Server 2008, and Windows Vista:  This property is not supported before Windows Server 2016 Technical Preview and Windows 10.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function AssetTag() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            AssetTag = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                AssetTag = objItem.AssetTag
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Availability and status of the device. Inherited from CIM_LogicalDevice.
+        ''' 1 = Other
+        ''' 2 = Unknown
+        ''' 3 = Running or Full Power
+        ''' 4 = Warning
+        ''' 5 = In Test
+        ''' 6 = Not Applicable
+        ''' 7 = Power Off
+        ''' 8 = Off Line
+        ''' 9 = Off Duty
+        ''' 10 = Degraded
+        ''' 11 = Not Installed
+        ''' 12 = Install Error
+        ''' 13 = Power Save - Unknown
+        ''' 14 = Power Save - Low Power Mode
+        ''' 15 = Power Save - Standby
+        ''' 16 = Power Cycle
+        ''' 17 = Power Save - Warning
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Availability() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Availability = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Availability = objItem.Availability
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Short description of an object (a one-line string). This property is inherited from CIM_ManagedSystemElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Caption() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Caption = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Caption = objItem.Caption
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' This value comes from the Processor Characteristics member of the Processor Information structure in the SMBIOS information.
+        ''' Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows Server 2008, and Windows Vista:  This property is not supported before Windows Server 2016 Technical Preview and Windows 10.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Characteristics() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Characteristics = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Characteristics = objItem.Characteristics
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Windows API Configuration Manager error code.
+        '''Value	Meaning
+        '''0 (0x0) Device is working properly.
+        '''1 (0x1) Device is not configured correctly.
+        '''2 (0x2) Windows cannot load the driver for this device.
+        '''3 (0x3) Driver for this device might be corrupted or the system may be low on memory or other resources.
+        '''4 (0x4) Device is not working properly. One of its drivers or the registry might be corrupted.
+        '''5 (0x5) Driver for the device requires a resource that Windows cannot manage.
+        '''6 (0x6) Boot configuration for the device conflicts with other devices.
+        '''7 (0x7) Cannot filter.
+        '''8 (0x8) Driver loader for the device is missing.
+        '''9 (0x9) Device is not working properly. The controlling firmware is incorrectly reporting the resources for the device.
+        '''10 (0xA) Device cannot start.
+        '''11 (0xB) Device failed.
+        '''12 (0xC) Device cannot find enough free resources to use.
+        '''13 (0xD) Windows cannot verify the device's resources.
+        '''14 (0xE) Device cannot work properly until the computer is restarted.
+        '''15 (0xF) Device is not working properly due to a possible re-enumeration problem.
+        '''16 (0x10) Windows cannot identify all of the resources that the device uses.
+        '''17 (0x11) Device is requesting an unknown resource type.
+        '''18 (0x12) Device drivers must be reinstalled.
+        '''19 (0x13) Failure using the VxD loader.
+        '''20 (0x14) Registry might be corrupted.
+        '''21 (0x15) System failure. If changing the device driver is ineffective, see the hardware documentation. Windows is removing the device.
+        '''22 (0x16) Device is disabled.
+        '''23 (0x17) System failure. If changing the device driver is ineffective, see the hardware documentation.
+        '''24 (0x18) Device is not present, not working properly, or does not have all of its drivers installed.
+        '''25 (0x19) Windows is still setting up the device.
+        '''26 (0x1A) Windows is still setting up the device.
+        '''27 (0x1B) Device does not have valid log configuration.
+        '''28 (0x1C) Device drivers are not installed.
+        '''29 (0x1D) Device is disabled. The device firmware did not provide the required resources.
+        '''30 (0x1E) Device is using an IRQ resource that another device is using.
+        '''31 (0x1F) Device is not working properly. Windows cannot load the required device drivers.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ConfigManagerErrorCode() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ConfigManagerErrorCode = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                ConfigManagerErrorCode = objItem.ConfigManagerErrorCode
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' If TRUE, the device is using a configuration that the user defines. This property is inherited from CIM_LogicalDevice.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ConfigManagerUserConfig() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ConfigManagerUserConfig = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                ConfigManagerUserConfig = objItem.ConfigManagerUserConfig
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' This value comes from the Status member of the Processor Information structure in the SMBIOS information.
+        '''Unknown (0)
+        '''CPU Enabled (1)
+        '''CPU Disabled by User via BIOS Setup (2)
+        '''CPU Disabled By BIOS (POST Error) (3)
+        '''CPU is Idle (4)
+        '''Reserved (5)
+        '''Reserved (6)
+        '''Other (7)
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function CpuStatus() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CpuStatus = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                CpuStatus = objItem.CpuStatus
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Name of the first concrete class that appears in the inheritance chain used to create an instance. When used with the other key properties of the class, the property allows all instances of this class and its subclasses to be identified uniquely. This property is inherited from CIM_LogicalDevice.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function CreationClassName() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CreationClassName = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                CreationClassName = objItem.CreationClassName
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Current speed of the processor, in MHz.
+        '''This value comes from the Current Speed member of the Processor Information structure in the SMBIOS information.
+        '''This property is inherited from CIM_Processor.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function CurrentClockSpeed() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentClockSpeed = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                CurrentClockSpeed = objItem.CurrentClockSpeed
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Voltage of the processor. If the eighth bit is set, bits 0-6 contain the voltage multiplied by 10. If the eighth bit is not set, then the bit setting in VoltageCaps represents the voltage value. CurrentVoltage is only set when SMBIOS designates a voltage value.
+        '''Example: Value for a processor voltage of 1.8 volts is 0x12 (1.8 x 10).
+        '''This value comes from the Voltage member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function CurrentVoltage() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            CurrentVoltage = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                CurrentVoltage = objItem.CurrentVoltage
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' On a 32-bit processor, the value is 32 and on a 64-bit processor it is 64. This property is inherited from CIM_Processor.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function DataWidth() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            DataWidth = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                DataWidth = objItem.DataWidth
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Description of the object. This property is inherited from CIM_ManagedSystemElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Description() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Description = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Description = objItem.Description
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' 
+        '''Unique identifier of a processor on the system. This property is inherited from CIM_LogicalDevice.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function DeviceID() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            DeviceID = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                DeviceID = objItem.DeviceID
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' If TRUE, the error reported in LastErrorCode is clear. This property is inherited from CIM_LogicalDevice.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ErrorCleared() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ErrorCleared = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                ErrorCleared = objItem.ErrorCleared
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' More information about the error recorded in LastErrorCode, and information about corrective actions that can be taken. This property is inherited from CIM_LogicalDevice.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ErrorDescription() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ErrorDescription = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                ErrorDescription = objItem.ErrorDescription
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' External clock frequency, in MHz. If the frequency is unknown, this property is set to NULL.
+        '''This value comes from the External Clock member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ExtClock() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ExtClock = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                ExtClock = objItem.ExtClock
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' This value comes from the Processor Information structure in the SMBIOS version information. For SMBIOS versions 2.0 thru 2.5 the value comes from the Processor Family member. For SMBIOS version 2.6+ the value comes from the Processor Family 2 member.
+        '''This property is inherited from CIM_Processor.
+        '''Value	Meaning
+        '''1 (0x1) Other
+        '''2 (0x2) Unknown
+        '''3 (0x3) 8086
+        '''4 (0x4) 80286
+        '''5 (0x5) Intel386™ Processor
+        '''6 (0x6) Intel486™ Processor
+        '''7 (0x7) 8087
+        '''8 (0x8) 80287
+        '''9 (0x9) 80387
+        '''10 (0xA) 80487
+        '''11 (0xB) Pentium Brand
+        '''12 (0xC) Pentium Pro
+        '''13 (0xD) Pentium II
+        '''14 (0xE) Pentium Processor with MMX™ Technology
+        '''15 (0xF) Celeron™
+        '''16 (0x10) Pentium II Xeon™
+        '''17 (0x11) Pentium III
+        '''18 (0x12) M1 Family
+        '''19 (0x13) M2 Family
+        '''24 (0x18) AMD Duron™ Processor Family
+        '''25 (0x19) K5 Family
+        '''26 (0x1A) K6 Family
+        '''27 (0x1B) K6-2
+        '''28 (0x1C) K6-3
+        '''29 (0x1D) AMD Athlon™ Processor Family
+        '''30 (0x1E) AMD2900 Family
+        '''31 (0x1F) K6-2+
+        '''32 (0x20) Power PC Family
+        '''33 (0x21) Power PC 601
+        '''34 (0x22) Power PC 603
+        '''35 (0x23) Power PC 603+
+        '''36 (0x24) Power PC 604
+        '''37 (0x25) Power PC 620
+        '''38 (0x26) Power PC X704
+        '''39 (0x27) Power PC 750
+        '''48 (0x30) Alpha Family
+        '''49 (0x31) Alpha 21064
+        '''50 (0x32) Alpha 21066
+        '''51 (0x33) Alpha 21164
+        '''52 (0x34) Alpha 21164PC
+        '''53 (0x35) Alpha 21164a
+        '''54 (0x36) Alpha 21264
+        '''55 (0x37) Alpha 21364
+        '''64 (0x40) MIPS Family
+        '''65 (0x41) MIPS R4000
+        '''66 (0x42) MIPS R4200
+        '''67 (0x43) MIPS R4400
+        '''68 (0x44) MIPS R4600
+        '''69 (0x45) MIPS R10000
+        '''80 (0x50) SPARC Family
+        '''81 (0x51) SuperSPARC
+        '''82 (0x52) microSPARC II
+        '''83 (0x53) microSPARC IIep
+        '''84 (0x54) UltraSPARC
+        '''85 (0x55) UltraSPARC II
+        '''86 (0x56) UltraSPARC IIi
+        '''87 (0x57) UltraSPARC III
+        '''88 (0x58) UltraSPARC IIIi
+        '''96 (0x60) 68040
+        '''97 (0x61) 68xxx Family
+        '''98 (0x62) 68000
+        '''99 (0x63) 68010
+        '''100 (0x64) 68020
+        '''101 (0x65) 68030
+        '''112 (0x70) Hobbit Family
+        '''120 (0x78) Crusoe™ TM5000 Family
+        '''121 (0x79) Crusoe™ TM3000 Family
+        '''122 (0x7A) Efficeon™ TM8000 Family
+        '''128 (0x80) Weitek
+        '''130 (0x82) Itanium™ Processor
+        '''131 (0x83) AMD Athlon™ 64 Processor Family
+        '''132 (0x84) AMD Opteron™ Processor Family
+        '''144 (0x90) PA-RISC Family
+        '''145 (0x91) PA-RISC 8500
+        '''146 (0x92) PA-RISC 8000
+        '''147 (0x93) PA-RISC 7300LC
+        '''148 (0x94) PA-RISC 7200
+        '''149 (0x95) PA-RISC 7100LC
+        '''150 (0x96) PA-RISC 7100
+        '''160 (0xA0) V30 Family
+        '''176 (0xB0) Pentium III Xeon™ Processor
+        '''177 (0xB1) Pentium III Processor with Intel SpeedStep™ Technology
+        '''178 (0xB2) Pentium 4
+        '''179 (0xB3) Intel Xeon™
+        '''180 (0xB4) AS400 Family
+        '''181 (0xB5) Intel Xeon™ Processor MP
+        '''182 (0xB6) AMD Athlon™ XP Family
+        '''183 (0xB7) AMD Athlon™ MP Family
+        '''184 (0xB8) Intel Itanium 2
+        '''185 (0xB9) Intel Pentium M Processor
+        '''190 (0xBE) K7
+        '''198 (0xC6) Intel Core™ i7-2760QM
+        '''200 (0xC8) IBM390 Family
+        '''201 (0xC9) G4
+        '''202 (0xCA) G5
+        '''203 (0xCB) G6
+        '''204 (0xCC) z/Architecture Base
+        '''250 (0xFA) i860
+        '''251 (0xFB) i960
+        '''260 (0x104) SH-3
+        '''261 (0x105) SH-4
+        '''280 (0x118) ARM
+        '''281 (0x119) StrongARM
+        '''300 (0x12C) 6x86
+        '''301 (0x12D) MediaGX
+        '''302 (0x12E) MII
+        '''320 (0x140) WinChip
+        '''350 (0x15E) DSP
+        '''500 (0x1F4) Video Processor
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Family() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Family = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Family = objItem.ExtClock
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Date and time the object is installed. This property does not require a value to indicate that the object is installed. This property is inherited from CIM_ManagedSystemElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function InstallDate() As DateTime
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            InstallDate = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Dim str As String = objItem.InstallDate
+                InstallDate = New DateTime(str.Substring(0, 4), str.Substring(4, 2), str.Substring(6, 2), str.Substring(8, 2), str.Substring(10, 2), str.Substring(12, 2))
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' 
+        '''Size of the Level 2 processor cache. A Level 2 cache is an external memory area that has a faster access time than the main RAM memory.
+        '''This value comes from the L2 Cache Handle member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function L2CacheSize() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            L2CacheSize = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                L2CacheSize = objItem.L2CacheSize
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Clock speed of the Level 2 processor cache. A Level 2 cache is an external memory area that has a faster access time than the main RAM memory.
+        '''This value comes from the L2 Cache Handle member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function L2CacheSpeed() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            L2CacheSpeed = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                L2CacheSpeed = objItem.L2CacheSpeed
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Size of the Level 3 processor cache. A Level 3 cache is an external memory area that has a faster access time than the main RAM memory.
+        '''This value comes from the L3 Cache Handle member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function L3CacheSize() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            L3CacheSize = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                L3CacheSize = objItem.L3CacheSize
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Clockspeed of the Level 3 property cache. A Level 3 cache is an external memory area that has a faster access time than the main RAM memory.
+        '''This value comes from the L3 Cache Handle member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function L3CacheSpeed() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            L3CacheSpeed = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                L3CacheSpeed = objItem.L3CacheSpeed
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Last error code reported by the logical device. This property is inherited from CIM_LogicalDevice.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function LastErrorCode() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            LastErrorCode = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                LastErrorCode = objItem.LastErrorCode
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Definition of the processor type. The value depends on the architecture of the processor.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Level() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Level = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Level = objItem.Level
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' 
+        '''Load capacity of each processor, averaged to the last second. Processor loading refers to the total computing burden for each processor at one time. This property is inherited from CIM_Processor.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function LoadPercentage() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            LoadPercentage = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                LoadPercentage = objItem.LoadPercentage
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Name of the processor manufacturer.
+        '''Example: A. Datum Corporation
+        '''This value comes from the Processor Manufacturer member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Manufacturer() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Manufacturer = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Manufacturer = objItem.Manufacturer
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Maximum speed of the processor, in MHz.
+        '''This value comes from the Max Speed member of the Processor Information structure in the SMBIOS information.
+        '''This property is inherited from CIM_Processor.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function MaxClockSpeed() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            MaxClockSpeed = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                MaxClockSpeed = objItem.MaxClockSpeed
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Label by which the object is known. When this property is a subclass, it can be overridden to be a key property.
+        '''This value comes from the Processor Version member of the Processor Information structure in the SMBIOS information.
+        '''This property is inherited from CIM_ManagedSystemElement.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Name() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Name = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Name = objItem.Name
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Number of cores for the current instance of the processor. A core is a physical processor on the integrated circuit. For example, in a dual-core processor this property has a value of 2. For more information, see Remarks.
+        '''This value comes from the Processor Information structure in the SMBIOS version information. For SMBIOS versions 2.5 thru 2.9 the value comes from the Core Count member. For SMBIOS version 3.0+ the value comes from the Core Count 2 member.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function NumberOfCores() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            NumberOfCores = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                NumberOfCores = objItem.NumberOfCores
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' The number of enabled cores per processor socket.
+        '''This value comes from the Processor Information structure in the SMBIOS version information. For SMBIOS versions 2.5 thru 2.9 the value comes from the Core Enabled member. For SMBIOS version 3.0+ the value comes from the Core Enabled 2 member.
+        '''Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows Server 2008, and Windows Vista:  This property is not supported before Windows Server 2016 Technical Preview and Windows 10.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function NumberOfEnabledCore() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            NumberOfEnabledCore = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                NumberOfEnabledCore = objItem.NumberOfEnabledCore
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Number of logical processors for the current instance of the processor. For processors capable of hyperthreading, this value includes only the processors which have hyperthreading enabled. For more information, see Remarks.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function NumberOfLogicalProcessors() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            NumberOfLogicalProcessors = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                NumberOfLogicalProcessors = objItem.NumberOfLogicalProcessors
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Processor family type. Used when the Family property is set to 1, which means Other. This string should be set to NULL when the Family property is a value that is not 1. This property is inherited from CIM_Processor.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function OtherFamilyDescription() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            OtherFamilyDescription = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                OtherFamilyDescription = objItem.OtherFamilyDescription
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' The part number of this processor as set by the manufacturer.
+        '''This value comes from the Part Number member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function PartNumber() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            PartNumber = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                PartNumber = objItem.PartNumber
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Windows Plug and Play device identifier of the logical device. This property is inherited from CIM_LogicalDevice.
+        '''Example: *PNP030b
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function PNPDeviceID() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            PNPDeviceID = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                PNPDeviceID = objItem.PNPDeviceID
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Array of the specific power-related capabilities of a logical device. This property is inherited from CIM_LogicalDevice.
+        '''Value	Meaning
+        '''0 (0x0) Unknown
+        '''1 (0x1) Not Supported
+        '''2 (0x2) Disabled
+        '''3 (0x3) Enabled - The power management features are currently enabled but the exact feature set is unknown or the information is unavailable.
+        '''4 (0x4) Power Saving Modes Entered Automatically - The device can change its power state based on usage or other criteria.
+        '''5 (0x5) Power State Settable - The SetPowerState method is supported. This method is found on the parent CIM_LogicalDevice class and can be implemented. For more information, see Designing Managed Object Format (MOF) Classes.
+        '''6 (0x6) Power Cycling Supported - The SetPowerState method can be invoked with the PowerState parameter set to 5 (Power Cycle).
+        '''7 (0x7) Timed Power-On Supported - The SetPowerState method can be invoked with the PowerState parameter set to 5 (Power Cycle) and Time set to a specific date and time, or interval, for power-on.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function PowerManagementCapabilities() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            PowerManagementCapabilities = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                PowerManagementCapabilities = objItem.PowerManagementCapabilities
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' If TRUE, the power of the device can be managed, which means that it can be put into suspend mode, and so on. The property does not indicate that power management features are enabled, but it does indicate that the logical device power can be managed. This property is inherited from CIM_LogicalDevice.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function PowerManagementSupported() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            PowerManagementSupported = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                PowerManagementSupported = objItem.PowerManagementSupported
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Processor information that describes the processor features. For an x86 class CPU, the field format depends on the processor support of the CPUID instruction. If the instruction is supported, the property contains 2 (two) DWORD formatted values. The first is an offset of 08h-0Bh, which is the EAX value that a CPUID instruction returns with input EAX set to 1. The second is an offset of 0Ch-0Fh, which is the EDX value that the instruction returns. Only the first two bytes of the property are significant and contain the contents of the DX register at CPU reset—all others are set to 0 (zero), and the contents are in DWORD format.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ProcessorId() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ProcessorId = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                ProcessorId = objItem.ProcessorId
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Primary function of the processor.
+        '''This value comes from the Processor Type member of the Processor Information structure in the SMBIOS information.
+        '''Other (1)
+        '''Unknown (2)
+        '''Central Processor (3)
+        '''Math Processor (4)
+        '''DSP Processor (5)
+        '''Video Processor (6)
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ProcessorType() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ProcessorType = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                ProcessorType = objItem.ProcessorType
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' System revision level that depends on the architecture. The system revision level contains the same values as the Version property, but in a numerical format.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Revision() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Revision = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Revision = objItem.Revision
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Role of the processor. This property is inherited from CIM_Processor.
+        '''Examples: Central Processor or Math Processor
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Role() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Role = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Role = objItem.Role
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' If True, the processor supports address translation extensions used for virtualization.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SecondLevelAddressTranslationExtensions() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SecondLevelAddressTranslationExtensions = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                SecondLevelAddressTranslationExtensions = objItem.SecondLevelAddressTranslationExtensions
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' The serial number of this processor This value is set by the manufacturer and normally not changeable.
+        '''This value comes from the Serial Number member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SerialNumber() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SerialNumber = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                SerialNumber = objItem.SerialNumber
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Type of chip socket used on the circuit.
+        '''Example: J202
+        '''This value comes from the Socket Designation member of the Processor Information structure in the SMBIOS information.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SocketDesignation() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SocketDesignation = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                SocketDesignation = objItem.SocketDesignation
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Values include the following:
+        '''OK ("OK")
+        '''Error ("Error")
+        '''Degraded ("Degraded")
+        '''Unknown ("Unknown")
+        '''Pred Fail ("Pred Fail")
+        '''Starting ("Starting")
+        '''Stopping ("Stopping")
+        '''Service ("Service")
+        '''Stressed ("Stressed")
+        '''NonRecover ("NonRecover")
+        '''No Contact ("No Contact")
+        '''Lost Comm ("Lost Comm")
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Status() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Status = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Status = objItem.Status
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' State of the logical device. If this property does not apply to the logical device, use the value 5, which means Not Applicable. This property is inherited from CIM_LogicalDevice.
+        '''Value	Meaning
+        '''1 (0x1) Other
+        '''2 (0x2) Unknown
+        '''3 (0x3) Enabled
+        '''4 (0x4) Disabled
+        '''5 (0x5) Not Applicable
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function StatusInfo() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            StatusInfo = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                StatusInfo = objItem.StatusInfo
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Revision level of the processor in the processor family. This property is inherited from CIM_Processor.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Stepping() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Stepping = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Stepping = objItem.Stepping
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Value of the CreationClassName property for the scoping computer. This property is inherited from CIM_LogicalDevice.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SystemCreationClassName() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SystemCreationClassName = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                SystemCreationClassName = objItem.SystemCreationClassName
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Name of the scoping system. This property is inherited from CIM_LogicalDevice.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function SystemName() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            SystemName = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                SystemName = objItem.SystemName
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' The number of threads per processor socket.
+        '''This value comes from the Processor Information structure in the SMBIOS version information. For SMBIOS versions 2.5 thru 2.9 the value comes from the Thread Count member. For SMBIOS version 3.0+ the value comes from the Thread Count 2 member.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function ThreadCount() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            ThreadCount = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                ThreadCount = objItem.ThreadCount
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Globally unique identifier for the processor. This identifier may only be unique within a processor family. This property is inherited from CIM_Processor.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function UniqueId() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            UniqueId = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                UniqueId = objItem.UniqueId
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' CPU socket information, including the method by which this processor can be upgraded, if upgrades are supported. This property is an integer enumeration.
+        '''This value comes from the Processor Upgrade member of the Processor Information structure in the SMBIOS information.
+        '''This property is inherited from CIM_Processor.
+        '''Value	Meaning
+        '''1 (0x1) Other
+        '''2 (0x2) Unknown
+        '''3 (0x3) Daughter Board
+        '''4 (0x4) ZIF Socket
+        '''5 (0x5) Replacement or Piggy Back
+        '''6 (0x6) None
+        '''7 (0x7) LIF Socket
+        '''8 (0x8) Slot 1
+        '''9 (0x9) Slot 2
+        '''10 (0xA) 370 Pin Socket
+        '''11 (0xB) Slot A
+        '''12 (0xC) Slot M
+        '''13 (0xD) Socket 423
+        '''14 (0xE) Socket A (Socket 462)
+        '''15 (0xF) Socket 478
+        '''16 (0x10) Socket 754
+        '''17 (0x11) Socket 940
+        '''18 (0x12) Socket 939
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function UpgradeMethod() As UInt16
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            UpgradeMethod = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                UpgradeMethod = objItem.UpgradeMethod
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Processor revision number that depends on the architecture.
+        '''Example: Model 2, Stepping 12
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function Version() As String
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            Version = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                Version = objItem.Version
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' If True, the Firmware has enabled virtualization extensions.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function VirtualizationFirmwareEnabled() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            VirtualizationFirmwareEnabled = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                VirtualizationFirmwareEnabled = objItem.VirtualizationFirmwareEnabled
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' If True, the processor supports Intel or AMD Virtual Machine Monitor extensions.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function VMMonitorModeExtensions() As Boolean
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            VMMonitorModeExtensions = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                VMMonitorModeExtensions = objItem.VMMonitorModeExtensions
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+        ''' <summary>
+        ''' Voltage capabilities of the processor. Bits 0-3 of the field represent specific voltages that the processor socket can accept. All other bits should be set to 0 (zero). The socket is configurable if multiple bits are set. For more information about the actual voltage at which the processor is running, see CurrentVoltage. If the property is NULL, then the voltage capabilities are unknown.
+        '''Value	Meaning
+        '''1 (0x1) 5 volts
+        '''2 (0x2) 3.3 volts
+        '''4 (0x4) 2.9 volts
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Shared Function VoltageCaps() As UInt32
+            Dim objWMIService As Object
+            Dim objItems As Object
+            Dim objItem As Object
+            Dim server As New Devices.ServerComputer
+            Dim ComputerName As String = server.Name
+            VoltageCaps = Nothing
+            objWMIService = GetObject("winmgmts:\\" & ComputerName & "\root\CIMV2")
+            objItems = objWMIService.ExecQuery("SELECT * FROM Win32_Processor")
+            For Each objItem In objItems
+                VoltageCaps = objItem.VoltageCaps
+            Next
+            objWMIService = Nothing
+            objItems = Nothing
+            objItem = Nothing
+        End Function
+    End Class
 End Class
