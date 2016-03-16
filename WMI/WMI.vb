@@ -7134,7 +7134,7 @@ Public Class WMI
             objItems = Nothing
             objItem = Nothing
         End Function
-        Public Shared Function TimeOfLastReset() As Integer
+        Public Shared Function TimeOfLastReset() As DateTime
             Dim objWMIService As Object
             Dim objItems As Object
             Dim objItem As Object
